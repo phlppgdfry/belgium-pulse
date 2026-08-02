@@ -1,0 +1,29 @@
+{
+  "name": "Belgium Pulse",
+  "dataColors": ["#00C2A8", "#5B8CFF", "#FFB547", "#FF6B6B", "#9B8AFB", "#79D2DE"],
+  "background": "#0B1020",
+  "foreground": "#F5F7FF",
+  "tableAccent": "#00C2A8",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [{"show": true, "fontColor": {"solid": {"color": "#F5F7FF"}}, "fontFamily": "Aptos Display"}],
+        "background": [{"show": true, "color": {"solid": {"color": "#141B33"}}, "transparency": 0}],
+        "border": [{"show": false}],
+        "labels": [{"color": {"solid": {"color": "#C9D1E8"}}, "fontSize": 10}]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [{"color": {"solid": {"color": "#C9D1E8"}}}],
+        "categoryLabels": [{"color": {"solid": {"color": "#8D99B8"}}}]
+      }
+    }
+  },
+  "textClasses": {
+    "callout": {"fontSize": 28, "fontFace": "Aptos Display", "color": "#F5F7FF"},
+    "title": {"fontSize": 16, "fontFace": "Aptos Display", "color": "#F5F7FF"},
+    "label": {"fontSize": 10, "fontFace": "Aptos", "color": "#C9D1E8"}
+  }
+}
+

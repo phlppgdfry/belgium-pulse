@@ -1,0 +1,36 @@
+name: Deploy PBIP to Fabric
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Fabric deployment environment
+        required: true
+        default: dev
+        type: choice
+        options: [dev, prod]
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Install deployment dependency
+        run: pip install fabric-cicd
+      - name: Deploy PBIP
+        shell: pwsh
+        env:
+          FABRIC_WORKSPACE_NAME: ${{ vars.FABRIC_WORKSPACE_NAME }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:FABRIC_WORKSPACE_NAME)) {
+            throw "Set the FABRIC_WORKSPACE_NAME environment variable before deploying."
+          }
+          python scripts/deploy_to_fabric.py --workspace-name "$env:FABRIC_WORKSPACE_NAME" --environment "${{ inputs.environment }}" --spn-auth
+

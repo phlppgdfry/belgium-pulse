@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Runtime data and secrets
+data/raw/*
+!data/raw/.gitkeep
+*.token
+
+# Power BI Desktop / PBIP local files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/unappliedChanges.json
+*.pbix
+*.pbit
+
+# OS / editor
+.DS_Store
+.vscode/
+

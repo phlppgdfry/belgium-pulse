@@ -1,0 +1,48 @@
+// Create these measures under the 'City Snapshot' table.
+
+Average Chaos Score =
+ROUND(AVERAGE('City Snapshot'[chaos_score]), 1)
+
+Pulse Status =
+VAR Score = [Average Chaos Score]
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(Score), "Geen data",
+        Score < 25, "Rustig",
+        Score < 50, "Lichte druk",
+        Score < 75, "Druk",
+        "Chaosmodus"
+    )
+
+Highest Pressure City =
+VAR TopCity =
+    TOPN(1, ALLSELECTED('City Snapshot'[city]), [Average Chaos Score], DESC)
+RETURN
+    CONCATENATEX(TopCity, 'City Snapshot'[city])
+
+Average European AQI =
+ROUND(AVERAGE('City Snapshot'[european_aqi]), 0)
+
+Average Temperature =
+ROUND(AVERAGE('City Snapshot'[temperature_c]), 1)
+
+Data Freshness UTC =
+FORMAT(MAX('City Snapshot'[observed_at_utc]), "yyyy-mm-dd hh:mm") & " UTC"
+
+City Rank =
+RANKX(
+    ALLSELECTED('City Snapshot'[city]),
+    [Average Chaos Score],
+    ,
+    DESC,
+    Dense
+)
+
+Scenario Chaos Score =
+VAR BaseScore = [Average Chaos Score]
+VAR HeatDelta = SELECTEDVALUE('Heat scenario'[Heat scenario Value], 0)
+VAR RainDelta = SELECTEDVALUE('Rain scenario'[Rain scenario Value], 0)
+RETURN
+    MIN(100, MAX(0, BaseScore + HeatDelta * 2 + RainDelta * 0.15))
+

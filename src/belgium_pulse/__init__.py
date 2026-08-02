@@ -1,0 +1,2 @@
+"""Belgium Pulse domain logic."""
+

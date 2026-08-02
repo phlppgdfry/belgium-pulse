@@ -1,0 +1,6 @@
+observed_at_utc,city,latitude,longitude,temperature_c,apparent_temperature_c,precipitation_probability_pct,wind_speed_kmh,pm10,pm2_5,european_aqi,chaos_score
+2026-08-02T22:40:43Z,Brussel,50.8503,4.3517,24.8,22.1,0,14.4,9.5,6.1,37,26.5
+2026-08-02T22:40:44Z,Antwerpen,51.2194,4.4025,24.1,21.4,0,16.6,9.2,5.9,35,25.8
+2026-08-02T22:40:44Z,Gent,51.0543,3.7174,23.9,21.7,0,15.8,11.0,6.4,34,25.3
+2026-08-02T22:40:45Z,Luik,50.6326,5.5797,26.1,25.1,0,6.5,8.7,5.0,29,22.8
+2026-08-02T22:40:46Z,Charleroi,50.4108,4.4446,24.7,22.7,0,9.4,9.2,6.2,36,24.7
