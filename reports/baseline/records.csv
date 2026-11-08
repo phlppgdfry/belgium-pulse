@@ -1,0 +1,6 @@
+id,name,temperature,rain,wind,aqi,scenario,version,status,value,context,contributions
+charleroi,Charleroi,24,40,16,64,False,1,Moderate,47.2,24 °C,"{""Air quality (45%)"": 28.8, ""Temperature (20%)"": 6.0, ""Rain probability (15%)"": 6.0, ""Wind (20%)"": 6.4}"
+antwerp,Antwerpen,25,20,18,57,False,1,Moderate,42.9,25 °C,"{""Air quality (45%)"": 25.65, ""Temperature (20%)"": 7.0, ""Rain probability (15%)"": 3.0, ""Wind (20%)"": 7.2}"
+liege,Luik,27,15,9,43,False,1,Moderate,34.2,27 °C,"{""Air quality (45%)"": 19.35, ""Temperature (20%)"": 9.0, ""Rain probability (15%)"": 2.25, ""Wind (20%)"": 3.6}"
+brussels,Brussel,23,35,14,38,False,1,Moderate,33.0,23 °C,"{""Air quality (45%)"": 17.1, ""Temperature (20%)"": 5.0, ""Rain probability (15%)"": 5.25, ""Wind (20%)"": 5.6}"
+ghent,Gent,21,45,12,29,False,1,Low,27.6,21 °C,"{""Air quality (45%)"": 13.05, ""Temperature (20%)"": 3.0, ""Rain probability (15%)"": 6.75, ""Wind (20%)"": 4.8}"

@@ -1,0 +1,157 @@
+{
+  "project": "Belgium Pulse",
+  "mode": "synthetic baseline",
+  "clock": "Fixture snapshot · 15 June 2026, 08:00 UTC",
+  "metrics": [
+    {
+      "label": "Cities observed",
+      "value": 5,
+      "note": "Five independent fixture observations"
+    },
+    {
+      "label": "Mean pressure",
+      "value": "37.0",
+      "note": "Equal weight per city"
+    },
+    {
+      "label": "Highest pressure",
+      "value": "Charleroi",
+      "note": "Inspect the weighted contribution"
+    },
+    {
+      "label": "Active scenarios",
+      "value": 0,
+      "note": "Editable locally; source data preserved"
+    }
+  ],
+  "analysis": {
+    "title": "Pressure, explained.",
+    "headline": "Four signals. One transparent score.",
+    "description": "A portfolio index for comparison, not a health or mobility advisory. Air quality weighs 45%, temperature 20%, rain 15%, wind 20%.",
+    "bars_title": "Pressure by city · 0–100",
+    "bars": [
+      {
+        "label": "Charleroi",
+        "value": 47.2,
+        "display": "47.2"
+      },
+      {
+        "label": "Antwerpen",
+        "value": 42.9,
+        "display": "42.9"
+      },
+      {
+        "label": "Luik",
+        "value": 34.2,
+        "display": "34.2"
+      },
+      {
+        "label": "Brussel",
+        "value": 33.0,
+        "display": "33.0"
+      },
+      {
+        "label": "Gent",
+        "value": 27.6,
+        "display": "27.6"
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "charleroi",
+      "name": "Charleroi",
+      "temperature": 24,
+      "rain": 40,
+      "wind": 16,
+      "aqi": 64,
+      "scenario": false,
+      "version": 1,
+      "status": "Moderate",
+      "value": 47.2,
+      "context": "24 °C",
+      "contributions": {
+        "Air quality (45%)": 28.8,
+        "Temperature (20%)": 6.0,
+        "Rain probability (15%)": 6.0,
+        "Wind (20%)": 6.4
+      }
+    },
+    {
+      "id": "antwerp",
+      "name": "Antwerpen",
+      "temperature": 25,
+      "rain": 20,
+      "wind": 18,
+      "aqi": 57,
+      "scenario": false,
+      "version": 1,
+      "status": "Moderate",
+      "value": 42.9,
+      "context": "25 °C",
+      "contributions": {
+        "Air quality (45%)": 25.65,
+        "Temperature (20%)": 7.0,
+        "Rain probability (15%)": 3.0,
+        "Wind (20%)": 7.2
+      }
+    },
+    {
+      "id": "liege",
+      "name": "Luik",
+      "temperature": 27,
+      "rain": 15,
+      "wind": 9,
+      "aqi": 43,
+      "scenario": false,
+      "version": 1,
+      "status": "Moderate",
+      "value": 34.2,
+      "context": "27 °C",
+      "contributions": {
+        "Air quality (45%)": 19.35,
+        "Temperature (20%)": 9.0,
+        "Rain probability (15%)": 2.25,
+        "Wind (20%)": 3.6
+      }
+    },
+    {
+      "id": "brussels",
+      "name": "Brussel",
+      "temperature": 23,
+      "rain": 35,
+      "wind": 14,
+      "aqi": 38,
+      "scenario": false,
+      "version": 1,
+      "status": "Moderate",
+      "value": 33.0,
+      "context": "23 °C",
+      "contributions": {
+        "Air quality (45%)": 17.1,
+        "Temperature (20%)": 5.0,
+        "Rain probability (15%)": 5.25,
+        "Wind (20%)": 5.6
+      }
+    },
+    {
+      "id": "ghent",
+      "name": "Gent",
+      "temperature": 21,
+      "rain": 45,
+      "wind": 12,
+      "aqi": 29,
+      "scenario": false,
+      "version": 1,
+      "status": "Low",
+      "value": 27.6,
+      "context": "21 °C",
+      "contributions": {
+        "Air quality (45%)": 13.05,
+        "Temperature (20%)": 3.0,
+        "Rain probability (15%)": 6.75,
+        "Wind (20%)": 4.8
+      }
+    }
+  ]
+}

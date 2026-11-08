@@ -1,0 +1,16 @@
+{
+  "name": "Belgium Pulse",
+  "short_name": "Belgium Pulse",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#176eaa",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
