@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Belgium Pulse · Philippe Godfroy</title>
+    <meta
+      name="description"
+      content="An interactive Belgian city observatory with a transparent weighted pressure index and persistent what-if scenarios."
+    />
+    <meta name="theme-color" content="#176eaa" />
+    <link rel="canonical" href="https://phlppgdfry.github.io/belgium-pulse/" />
+    <meta property="og:title" content="Belgium Pulse · Engineering portfolio" />
+    <meta
+      property="og:description"
+      content="An interactive Belgian city observatory with a transparent weighted pressure index and persistent what-if scenarios."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://phlppgdfry.github.io/belgium-pulse/"
+    />
+    <meta
+      property="og:image"
+      content="https://phlppgdfry.github.io/belgium-pulse/docs/preview.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="showcase.css" />
+  </head>
+  <body>
+    <a class="skip" href="#project">Skip to project</a>
+    <header>
+      <a href="https://phlppgdfry.github.io/belgium-pulse/" class="brand"
+        ><img src="logo.svg" width="34" height="34" alt="" /><span
+          >Belgium Pulse</span
+        ></a
+      >
+      <nav aria-label="Project navigation">
+        <a href="#walkthrough">Workflow</a><a href="#engineering">Engineering</a
+        ><a href="https://github.com/phlppgdfry/belgium-pulse">Source code</a>
+      </nav>
+    </header>
+    <main id="project">
+      <section class="hero">
+        <div>
+          <h1>A clearer view of city pressure.</h1>
+          <p class="lead">
+            An interactive Belgian city observatory with a transparent weighted
+            pressure index and persistent what-if scenarios.
+          </p>
+          <div class="actions">
+            <a class="button" href="#run">Run the demo</a
+            ><a
+              class="button outline"
+              href="https://github.com/phlppgdfry/belgium-pulse"
+              >Explore the repository</a
+            >
+          </div>
+        </div>
+        <div class="scope">
+          <strong>Local application. Public case study.</strong>This page
+          presents the working product and its engineering. Run the interactive
+          application locally. All displayed records and metrics are synthetic.
+        </div>
+      </section>
+      <figure class="preview">
+        <a href="docs/preview.png" aria-label="View full desktop screenshot"
+          ><img
+            src="docs/preview.png"
+            width="1440"
+            height="1100"
+            alt="Belgium Pulse desktop workspace with metrics, comparison panel and actionable record inspector"
+            fetchpriority="high"
+        /></a>
+        <figcaption>
+          Actual application screenshot · Fixture snapshot · 15 June 2026, 08:00
+          UTC · <a href="docs/mobile.png">View the mobile layout</a>
+        </figcaption>
+      </figure>
+      <section class="metrics" aria-label="Reproducible synthetic baseline">
+        <div class="metric">
+          <span>Cities observed</span><strong>5</strong
+          ><small>Five independent fixture observations</small>
+        </div>
+        <div class="metric">
+          <span>Mean pressure</span><strong>37.0</strong
+          ><small>Equal weight per city</small>
+        </div>
+        <div class="metric">
+          <span>Highest pressure</span><strong>Charleroi</strong
+          ><small>Inspect the weighted contribution</small>
+        </div>
+        <div class="metric">
+          <span>Active scenarios</span><strong>0</strong
+          ><small>Editable locally; source data preserved</small>
+        </div>
+      </section>
+      <section class="content" id="walkthrough">
+        <div>
+          <h2>Follow the complete workflow.</h2>
+          <p>
+            Every action reaches a stored result. Validation errors explain the
+            rule that needs attention.
+          </p>
+          <ol>
+            <li>
+              Select Charleroi and inspect the four weighted score
+              contributions.
+            </li>
+            <li>
+              Set the apparent temperature to 35 °C and apply the scenario.
+              Watch the score, ranking and mean change.
+            </li>
+            <li>
+              Reload to verify persistence, then restore the original inputs.
+              Export the current observations as CSV.
+            </li>
+          </ol>
+        </div>
+        <div id="run">
+          <h2>From clone to working demo.</h2>
+          <p>
+            Python 3.11+ is enough to run the application. No API key, account
+            or paid service is required.
+          </p>
+          <pre><code>git clone https://github.com/phlppgdfry/belgium-pulse.git
+cd belgium-pulse
+python3 -m demo.server</code></pre>
+          <p>
+            Then open <code>http://127.0.0.1:8111</code>. Your changes stay in a
+            local SQLite database. See the README for fresh workspaces, exports
+            and test instructions.
+          </p>
+          <div class="resources">
+            <a href="https://github.com/phlppgdfry/belgium-pulse#readme"
+              >Setup guide</a
+            ><a
+              href="https://github.com/phlppgdfry/belgium-pulse/blob/main/docs/case-study.md"
+              >Full case study</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="content" id="engineering">
+        <div>
+          <h2>Clear rules. Verifiable behaviour.</h2>
+          <h3>Domain logic owns the outcome.</h3>
+          <p>
+            Server-side validation, explicit use cases and derived metrics keep
+            browser inputs from becoming authoritative business state.
+          </p>
+          <h3>Changes commit together.</h3>
+          <p>
+            A record update and its audit entry share one transaction. Version
+            checks reject stale edits, and concurrent requests are tested
+            against real SQLite connections.
+          </p>
+          <div class="resources">
+            <a
+              href="https://github.com/phlppgdfry/belgium-pulse/blob/main/docs/architecture.md"
+              >Architecture</a
+            ><a
+              href="https://github.com/phlppgdfry/belgium-pulse/blob/main/docs/api.md"
+              >API contract</a
+            ><a
+              href="https://github.com/phlppgdfry/belgium-pulse/tree/main/reports/baseline"
+              >Reproduce the evidence</a
+            >
+          </div>
+        </div>
+        <div class="evidence">
+          <h2>Evidence you can inspect.</h2>
+          <p>
+            Automated tests cover business boundaries, persistence, HTTP
+            responses, failed writes and simultaneous updates. Seven Chromium
+            checks cover the core task, branded assets, filtering and three
+            screen widths.
+          </p>
+          <p>
+            The repository records implementation limits and separates the
+            original concept from delivered functionality. Synthetic results are
+            never presented as customer outcomes.
+          </p>
+          <div class="resources">
+            <a
+              href="https://github.com/phlppgdfry/belgium-pulse/actions/workflows/demo.yml"
+              >View CI results</a
+            ><a
+              href="https://github.com/phlppgdfry/belgium-pulse/blob/main/docs/validation.md"
+              >Validation notes</a
+            ><a
+              href="https://github.com/phlppgdfry/belgium-pulse/blob/main/docs/runbook.md"
+              >Runbook</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer>
+        <span>Belgium Pulse · Portfolio demonstration</span
+        ><span
+          >Designed and built by
+          <a href="https://github.com/phlppgdfry">Philippe Godfroy</a></span
+        >
+      </footer>
+    </main>
+  </body>
+</html>
