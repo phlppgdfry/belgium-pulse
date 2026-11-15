@@ -1,9 +1,9 @@
 [project]
 name = "belgium-pulse"
-version = "0.1.0"
-description = "Open-data pipeline and Power BI starter for Belgium Pulse"
+version = "1.0.0"
+description = "Interactive city observatory with optional open-data and Power BI starter"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = ["certifi>=2025.0.0"]
 
 [project.optional-dependencies]
@@ -11,4 +11,4 @@ deploy = ["fabric-cicd>=1.2.0", "azure-identity>=1.25.0"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
