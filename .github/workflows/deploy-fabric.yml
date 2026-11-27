@@ -10,6 +10,9 @@ on:
         type: choice
         options: [dev, prod]
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: windows-latest
